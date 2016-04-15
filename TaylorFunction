@@ -1,0 +1,16 @@
+public static double taylor(int x, int n){ //for e^x
+		if (n == 0){
+			return 1;
+		}
+		int fact = 1;
+		for(int i=2;i<=n;i++) {
+			fact*=i;
+		}
+		return ((Math.pow(x, n)) / fact) + taylor(x, n-1);
+}
+
+public static void main(String[] args) {
+  int x = 1;
+  int n = 10;
+  System.out.println(taylor(x,n));
+}
